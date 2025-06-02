@@ -12,21 +12,17 @@ repository = "https://github.com/libninjacom/gmail-rs"
 [workspace]
 members = [".", "transform"]
 
+[lib]
+doctest = false
+required-features = []
+
 [dependencies]
 base64 = "0.22.1"
 futures = "0.3.25"
 http = "1.1.0"
-httpclient = { version = "0.25.0" , features = ["oauth2"]}
+httpclient = { version = "0.26.0", features = ["oauth2"]}
 serde_json = "1.0.81"
+serde = { version = "1.0.219" , features = ["derive"]}
 
-[dependencies.serde]
-version = "1.0.137"
-features = ["derive"]
-
-[dev-dependencies.tokio]
-version = "1.18.2"
-features = ["full"]
-
-[lib]
-doctest = false
-required-features = []
+[dev-dependencies]
+tokio = { version = "1.45.1" , features = ["full"]}
